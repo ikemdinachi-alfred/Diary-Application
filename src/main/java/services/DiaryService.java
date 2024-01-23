@@ -15,6 +15,5 @@ public interface  DiaryService {
     void createEntry(CreateEntryRequest createEntryRequest);
     Entry readEntriesBelongingTo(String username, String title);
     List<Entry> findEntriesBelongingTo(String username);
-
-
+    void writeOn(String username);
 }

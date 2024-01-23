@@ -2,7 +2,7 @@ package dto.request;
 
 import lombok.*;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Setter
 @Getter
