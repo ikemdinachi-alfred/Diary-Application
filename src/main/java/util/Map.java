@@ -6,7 +6,7 @@ import dto.request.RegisterRequest;
 public class Map {
     public static Diary mapRegisterToDiary(RegisterRequest registerRequest){
         Diary diary = new Diary();
-        diary.setUsername(registerRequest.getUsername());
+        diary.setUsername(registerRequest.getEmail());
         diary.setPassword(registerRequest.getPassword());
         return diary;
     }

@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @Document
 public class Entry {
     private String id;
+    private String username;
     private String title;
     private  String content;
      private LocalDate date;

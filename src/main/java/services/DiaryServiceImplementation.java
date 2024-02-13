@@ -7,6 +7,7 @@ import dto.request.CreateEntryRequest;
 import dto.request.UserLoginRequest;
 import dto.request.RegisterRequest;
 import dto.responds.RegistrationResponse;
+import exception.UserExistException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import util.Map;
@@ -25,7 +26,7 @@ public class DiaryServiceImplementation implements DiaryService{
 
     @Override
     public void register(RegisterRequest registerRequest) {
-        if (userExist(registerRequest.getEmail()));
+        if (userExist(registerRequest.getEmail()))throw new UserExistException("User already exist");
         Diary diary = Map.mapRegisterToDiary(registerRequest);
         repository.save(diary);
         registrationResponse.setMessage("Registration successful..");
