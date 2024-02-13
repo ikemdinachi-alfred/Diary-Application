@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class CreateEntryRequest {
-    private String body;
+    private String content;
     private String title;
     private String username;
 

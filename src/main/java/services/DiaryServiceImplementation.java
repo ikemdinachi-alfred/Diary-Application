@@ -4,7 +4,7 @@ import data.model.Diary;
 import data.model.Entry;
 import data.repository.DiaryRepository;
 import dto.request.CreateEntryRequest;
-import dto.request.LoginRequest;
+import dto.request.UserLoginRequest;
 import dto.request.RegisterRequest;
 import dto.responds.RegistrationResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,26 +19,24 @@ public class DiaryServiceImplementation implements DiaryService{
     @Autowired
     private RegistrationResponse registrationResponse;
 
-
-
     @Autowired
     private EntryService entryService;
 
 
     @Override
     public void register(RegisterRequest registerRequest) {
-    if (userExist(registerRequest.getUsername()));
+        if (userExist(registerRequest.getEmail()));
         Diary diary = Map.mapRegisterToDiary(registerRequest);
         repository.save(diary);
         registrationResponse.setMessage("Registration successful..");
     }
-    private boolean userExist(String username){
-        Diary diary = repository.findByUsername(username);
+    private boolean userExist(String email){
+        Diary diary = repository.findByUsername(email);
         return diary != null;
     }
 
     @Override
-    public void login(LoginRequest loginRequest) {
+    public void login(UserLoginRequest loginRequest) {
 
     }
 

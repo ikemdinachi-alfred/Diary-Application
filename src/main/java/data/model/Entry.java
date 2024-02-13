@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class Entry {
     private String id;
     private String title;
-    private  String body;
+    private  String content;
      private LocalDate date;
      private String diaryId;
 }
